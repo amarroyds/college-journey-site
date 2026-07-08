@@ -1,0 +1,174 @@
+/* College Journey — shared styles */
+:root {
+  --navy: #1b3a5c;
+  --gold: #e8a33d;
+  --teal: #2e7d6e;
+  --bg: #faf8f4;
+  --card: #ffffff;
+  --text: #2b2b2b;
+  --muted: #5f6b76;
+  --border: #e3ded4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+header.site {
+  background: var(--navy);
+  color: #fff;
+  padding: 1.1rem 1.5rem;
+}
+header.site a { color: #fff; text-decoration: none; }
+header.site .brand {
+  font-size: 1.15rem;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+header.site .tagline {
+  font-size: 0.85rem;
+  color: #cfdae6;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+nav.steps {
+  background: #14293f;
+  padding: 0.5rem 1.5rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.8rem;
+}
+nav.steps a {
+  color: #b8c9da;
+  text-decoration: none;
+  margin-right: 0.9rem;
+  white-space: nowrap;
+}
+nav.steps a:hover, nav.steps a.current { color: var(--gold); }
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.step-label {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--teal);
+  font-weight: bold;
+}
+
+h1 { font-size: 1.9rem; color: var(--navy); margin: 0.3rem 0 1rem; }
+h2 { font-size: 1.3rem; color: var(--navy); margin-top: 2.2rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.3rem; }
+h3 { font-size: 1.05rem; color: var(--navy); }
+
+a { color: #1a5f8a; }
+
+.callout {
+  border-left: 4px solid var(--gold);
+  background: #fdf6ea;
+  padding: 0.9rem 1.1rem;
+  margin: 1.4rem 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.95rem;
+}
+.callout.sheet { border-left-color: var(--teal); background: #eef6f3; }
+.callout.family { border-left-color: #a05a2c; background: #f9efe6; }
+.callout strong { color: var(--navy); }
+
+ol.actions { padding-left: 1.3rem; }
+ol.actions > li { margin-bottom: 1rem; }
+ol.actions > li::marker { font-weight: bold; color: var(--teal); }
+
+.resource {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.9rem;
+}
+.resource .rname { font-weight: bold; color: var(--navy); }
+.resource .rwhy { font-size: 0.93rem; color: var(--muted); margin-top: 0.2rem; }
+
+table.timeline {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin: 1rem 0 1.6rem;
+}
+table.timeline th {
+  background: var(--navy);
+  color: #fff;
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+}
+table.timeline td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.7rem;
+  vertical-align: top;
+  background: #fff;
+}
+table.timeline tr.season td { background: #eef2f6; font-weight: bold; color: var(--navy); }
+
+.prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.2rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+}
+.prevnext a {
+  text-decoration: none;
+  color: var(--navy);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  max-width: 48%;
+}
+.prevnext a:hover { border-color: var(--gold); }
+.prevnext .dir { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+
+footer.site {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding: 1.5rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Index page cards */
+.stage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 1.5rem; }
+@media (max-width: 620px) { .stage-grid { grid-template-columns: 1fr; } }
+.stage-card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: var(--text);
+}
+.stage-card:hover { border-color: var(--gold); }
+.stage-card .num {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.stage-card .name { font-weight: bold; color: var(--navy); display: block; margin: 0.15rem 0; }
+.stage-card .desc { font-size: 0.88rem; color: var(--muted); }
